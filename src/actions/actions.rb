@@ -3,7 +3,7 @@ module Actions
     next_direction = state.next_direction
     next_position = calc_next_position(state)
     # verify that next box is valid
-    if position is valid?(state, next_position)
+    if position_is_valid?(state, next_position)
       move_snake_to(state, next_position)
     else
       end_game(state)
@@ -12,7 +12,7 @@ module Actions
 
   private
 
-  def self.calc_next_position
+  def self.calc_next_position(state)
     current_position = state.snake.positions.first
     case state.next_direction
     when Model::Direction::UP
@@ -30,7 +30,7 @@ module Actions
     end
   end
 
-  def self.position_is_valid?(state, next_position)
+  def self.position_is_valid?(state, position)
     # verify that it is in grid
     is_invalid = ((position.row >= state.grid.rows || position.row < 0) ||
                   (position.col >= state.grid.cols || position.col < 0))
