@@ -6,7 +6,7 @@ This is a tiny version of Snake Game made with Ruby.
 
 ## Install and Use
 
-Make sure you have Ruby 2.5+ installed.
+Make sure you have Bundler and  Ruby 2.5+ installed.
 
 1. git clone `https://github.com/nathsotomayor/snake.git`
 2. `cd snake`
